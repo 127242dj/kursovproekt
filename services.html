@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="автомобили, лизинг, калкулатор, автосервиз, цени">   
     <meta name="description" content="Разгледайте нашите услуги: продажба на нови автомобили, качествен сервиз и консултации.">
-    <title>Услуги | AutoElite</title>
+    <title>Услуги - AutoElite</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
     <div class="container header-content">
-        <div class="logo"><a href="index.html"><img src="images/logo-white.png" alt="AutoElite"></a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt="AutoElite"></a></div>
+        <div class="mobile-menu-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Начало</a></li>
@@ -32,7 +39,7 @@
 
     <div class="services-grid">
         <div class="service-card">
-            <img src="images/sales.jpg" alt="Продажба">
+            <img src="images/service-sell.jpg" alt="Продажба">
             <h3>Продажба</h3>
             <p>Директен внос на нови и проверени употребявани автомобили с гаранция.</p>
         </div>
@@ -42,7 +49,34 @@
             <p>Пълна диагностика, ремонт на двигатели и ходова част от сертифицирани техници.</p>
         </div>
     </div>
-
+    <section class="calculator-section">
+        <div class="calc-wrapper">
+            <div class="calc-input">
+                <label for="car-price">Цена на автомобила (лв.):</label>
+                <input type="number" id="car-price" value="30000">
+                
+                <label for="deposit-range">Първоначална вноска:</label>
+                <input type="range" id="deposit-range" min="10" max="50" step="5" value="20">
+                <span id="deposit-value">20%</span> <label for="period">Срок (месеци):</label>
+                <select id="period">
+                    <option value="12">12 месеца</option>
+                    <option value="24">24 месеца</option>
+                    <option value="36" selected>36 месеца</option>
+                    <option value="48">48 месеца</option>
+                    <option value="60">60 месеца</option>
+                </select>
+            </div>
+            
+            <div class="calc-result">
+                <h4>Месечна вноска</h4>
+                <div class="result-amount">
+                    <span id="monthly-payment">0.00</span> 
+                    <small>лв.</small>
+                </div>
+                <button type="button" id="calc-btn" class="btn btn-primary">Изчисли вноската</button>
+            </div>
+        </div>
+    </section>
     <section class="table-section">
         <h3>Ценоразпис на основни услуги</h3>
         <table>
@@ -96,9 +130,9 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 AutoElite. Курсов проект. Всички права запазени.</p>
+        <p>&copy; 2026 AutoElite.Всички права запазени.</p>
     </div>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
