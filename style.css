@@ -1,11 +1,10 @@
-/* --- ГЛОБАЛНИ НАСТРОЙКИ И ПРОМЕНЛИВИ --- */
 :root {
-    --primary-color: #ff5722; /* Модерен оранжев акцент */
-    --primary-dark: #e64a19;  /* По-тъмен оранжев за hover */
-    --secondary-color: #1a252f; /* Тъмносин/въглен за хедър и футър */
-    --text-dark: #333333;     /* Основен текст */
-    --text-light: #7f8c8d;    /* По-светъл текст за подзаглавия */
-    --bg-light: #f9fbfd;      /* Много светло сив фон */
+    --primary-color: #ff5722;   
+    --primary-dark: #e64a19;  
+    --secondary-color: #1a252f; 
+    --text-dark: #333333;     
+    --text-light: #7f8c8d;    
+    --bg-light: #f9fbfd;      
     --white: #ffffff;
     --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
     --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
@@ -13,11 +12,10 @@
     --font-body: 'Open Sans', sans-serif;
 }
 
-/* Модерен "Reset" */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Изключително важно за подредбата */
+    box-sizing: border-box;
 }
 
 body {
@@ -28,7 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Помощен клас за центриране и ограничаване на ширината */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -55,11 +52,10 @@ h1 { font-size: 3rem; }
 h2 { font-size: 2.2rem; }
 h3 { font-size: 1.5rem; }
 
-/* --- БУТОНИ --- */
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    border-radius: 30px; /* Заоблени бутони */
+    border-radius: 30px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -75,11 +71,10 @@ h3 { font-size: 1.5rem; }
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px); /* Леко повдигане при посочване */
+    transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
 }
 
-/* --- ХЕДЪР И НАВИГАЦИЯ --- */
 header {
     background-color: var(--secondary-color);
     padding: 1rem 0;
@@ -96,7 +91,7 @@ header {
 }
 
 .logo img {
-    max-height: 50px; /* Ограничаване височината на логото */
+    max-height: 50px;
 }
 
 nav ul li {
@@ -113,7 +108,6 @@ nav ul li a {
     padding-bottom: 5px;
 }
 
-/* Ефект на подчертаване при hover */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -135,13 +129,11 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* --- HERO БАНЕР СЕКЦИЯ --- */
 .hero-banner {
-    /* Трябва да имаш голяма, хубава снимка тук */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/index.jpg');
     background-size: cover;
     background-position: center;
-    height: 70vh; /* Заема 70% от височината на екрана */
+    height: 70vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,7 +153,6 @@ nav ul li a.active::after {
     opacity: 0.9;
 }
 
-/* --- ОСНОВНО СЪДЪРЖАНИЕ --- */
 .about-section {
     padding: 80px 0;
 }
@@ -176,7 +167,6 @@ nav ul li a.active::after {
     font-size: 1.1rem;
 }
 
-/* Grid система за разделяне на 2 колони */
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -192,7 +182,7 @@ nav ul li a.active::after {
 }
 
 .image-box img:hover {
-    transform: scale(1.02); /* Леко увеличение на снимката при hover */
+    transform: scale(1.02);
 }
 
 .text-box h3 {
@@ -204,20 +194,18 @@ nav ul li a.active::after {
     margin-bottom: 1rem;
 }
 
-/* Видео контейнер за отзивчивост */
 .video-section {
-    margin-top: 80px;
+    margin-top: 0;
     text-align: center;
+    padding: 0;
 }
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 съотношение */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    max-width: 800px;
-    margin: 30px auto 0;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .video-container iframe {
@@ -228,17 +216,16 @@ nav ul li a.active::after {
     height: 100%;
 }
 
-/* --- ФУТЪР --- */
 footer {
     background-color: var(--secondary-color);
     color: #b0bec5;
     padding: 70px 0 20px;
-    margin-top: auto; /* Избутва футъра най-долу */
+    margin-top: auto;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 равни колони */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -280,19 +267,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- АДАПТИВНОСТ (Медия заявки) --- */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-    }
-    nav ul {
-        margin-top: 20px;
-        text-align: center;
-    }
-    nav ul li {
-        display: block;
-        margin: 15px 0;
-    }
     
     .hero-text h1 {
         font-size: 2.5rem;
@@ -308,10 +283,8 @@ footer {
         text-align: center;
     }
 }
-/* --- СТИЛОВЕ ЗА СТРАНИЦИТЕ --- */
 .page-content { padding: 60px 0; }
 
-/* Таблица */
 .table-section { margin-top: 50px; }
 table {
     width: 100%;
@@ -325,7 +298,6 @@ th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
 th { background-color: var(--secondary-color); color: var(--white); }
 tr:hover { background-color: #f1f1f1; }
 
-/* Галерия */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -341,7 +313,6 @@ tr:hover { background-color: #f1f1f1; }
 }
 .gallery-item img:hover { transform: scale(1.05); }
 
-/* Форма */
 .styled-form {
     background: var(--white);
     padding: 30px;
@@ -375,7 +346,6 @@ tr:hover { background-color: #f1f1f1; }
 }
 .service-card img { width: 100%; border-radius: 5px; margin-bottom: 15px; }
 
-/* --- СТИЛИЗАЦИЯ НА ЛИЗИНГОВИЯ КАЛКУЛАТОР --- */
 
 .calculator-section {
     padding: 80px 0;
@@ -394,7 +364,6 @@ tr:hover { background-color: #f1f1f1; }
     align-items: flex-start;
 }
 
-/* Лява част - Входове */
 .calc-input {
     flex: 1;
     min-width: 300px;
@@ -446,7 +415,6 @@ tr:hover { background-color: #f1f1f1; }
     margin-bottom: 20px;
 }
 
-/* Дясна част - Резултат */
 .calc-result {
     flex: 1;
     min-width: 300px;
@@ -488,7 +456,6 @@ tr:hover { background-color: #f1f1f1; }
     margin-left: 5px;
 }
 
-/* Адаптивност */
 @media (max-width: 768px) {
     .calc-wrapper {
         flex-direction: column;
@@ -501,24 +468,6 @@ tr:hover { background-color: #f1f1f1; }
         font-size: 2.5rem;
     }
 }
-@media (max-width: 768px) {
-    #main-nav {
-        display: none; /* Скрито по подразбиране на мобилни */
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: #1a252f;
-        flex-direction: column;
-        z-index: 9999;
-    }
-
-    /* Когато добавим класа 'active' чрез JS, това трябва да го покаже */
-    #main-nav.active {
-        display: flex !important; 
-    }
-}
-/* --- СТИЛОВЕ ЗА НОВИНИ --- */
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -614,9 +563,7 @@ tr:hover { background-color: #f1f1f1; }
     color: var(--primary-dark);
     padding-left: 5px;
 }
-/* --- МОБИЛНО МЕНЮ СТИЛОВЕ --- */
 
-/* Скриваме бутона на десктоп */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -629,37 +576,38 @@ tr:hover { background-color: #f1f1f1; }
     display: block;
     width: 25px;
     height: 3px;
-    background-color: white; /* Цвят на чертичките */
+    background-color: white;
     transition: 0.3s;
 }
 
-/* Адаптивност за мобилни устройства (под 768px) */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
-        display: flex; /* Показваме бутона */
+        display: flex;
     }
 
     nav {
-        display: none; /* Скриваме стандартното меню */
+        display: none;
         position: absolute;
-        top: 70px; /* Под хедъра */
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: #1a252f; /* Тъмен цвят като хедъра */
+        background-color: #1a252f;
         z-index: 1000;
     }
 
     nav.active {
-        display: block; /* Показваме го при добавен клас 'active' */
+        display: block;
     }
 
     nav ul {
+        display: flex;
         flex-direction: column;
         text-align: center;
         padding: 20px 0;
     }
 
     nav ul li {
+        display: block;
         margin: 15px 0;
     }
 }
