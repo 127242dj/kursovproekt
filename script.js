@@ -41,16 +41,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 3. НОВИНИ (ПРОЧЕТИ ОЩЕ) ---
-    const newsLinks = document.querySelectorAll('.read-more');
-    newsLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const extraContent = this.previousElementSibling;
-            if (extraContent) {
-                extraContent.classList.toggle('hidden');
-                this.innerHTML = extraContent.classList.contains('hidden') ? 'Прочети още &rarr;' : 'Скрий &larr;';
-            }
-        });
-    });
+
 });
